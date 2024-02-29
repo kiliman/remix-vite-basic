@@ -7,7 +7,7 @@ installGlobals();
 
 export default defineConfig({
   ssr: {
-    noExternal: [/^@mui\//],
+    noExternal: process.env.NODE_ENV === "production" ? [/^@mui\//] : [],
   },
   plugins: [remix(), tsconfigPaths()],
 });
