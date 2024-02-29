@@ -13,7 +13,7 @@ export default function Index() {
   return (
     <Container maxWidth="sm">
       <Box sx={{ my: 4 }}>
-        <Typography variant="h4" component="h1" sx={{ mb: 2 }} color="red">
+        <Typography variant="h4" component="h1" sx={{ mb: 2 }} color="primary">
           Remix + MUI + Vite Example
         </Typography>
         <ProTip />
@@ -25,7 +25,7 @@ export default function Index() {
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="text.secondary" align="center">
+    <Typography variant="body2" color="secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
