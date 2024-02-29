@@ -6,10 +6,8 @@ import tsconfigPaths from "vite-tsconfig-paths";
 installGlobals();
 
 export default defineConfig({
-  plugins: [
-    remix({
-      serverModuleFormat: "esm",
-    }),
-    tsconfigPaths(),
-  ],
+  ssr: {
+    noExternal: [/^@mui\//],
+  },
+  plugins: [remix(), tsconfigPaths()],
 });
