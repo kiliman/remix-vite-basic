@@ -1,3 +1,4 @@
+import { ThemeProvider } from "@emotion/react";
 import {
   Links,
   Meta,
@@ -5,6 +6,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
+import theme from "./theme";
+import { CssBaseline } from "@mui/material";
 
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -15,7 +18,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         {children}
         <ScrollRestoration />
         <Scripts />
@@ -25,5 +28,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Outlet />
+    </ThemeProvider>
+  );
 }
